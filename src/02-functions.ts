@@ -35,7 +35,19 @@ function addColleague(cs: Colleague[], name: string, department: string, email: 
     contact: { email, extension: highest + 1 },
   });
 }
-addColleague(colleagues.current, "New Hire", "Engineering", "newhire@company.com");
+
+function addInterest(friend: Friend, interest: string): string[] {
+    if (!friend.interests) {
+      // if 'interests' is undefined, initialize as empty.
+      friend.interests = [];
+    }
+    friend.interests.push(interest);
+    return friend.interests;
+  }
+
+  console.log("addInterest(): ", addInterest(friends[0], "Politics"));
+
+addColleague(colleagues.current, "Jane Doe", "Engineering", "janedoe12@company.com");
 console.log("after addColleague():", colleagues.current);
 
 // --- sortColleagues ---
