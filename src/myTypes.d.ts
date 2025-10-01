@@ -27,6 +27,15 @@ export interface EmailContact {
     email: string
 }
 
+export type FriendPartial = Partial<Friend>
+// Type for gaining access to an event, e.g. concert.
+export type EventPass = Omit<Colleague, "contact"> & {
+  passCode : number;
+}
+// Immutable person type, based on Friend type.
+export type SecureFriendContact = Readonly<Pick<Friend,"name" | "phone" > >
+
+
 export type Department = "Engineering" | "Finance" | "HR";
 export interface ColleagueV2 {
   name: string;
@@ -45,4 +54,13 @@ export type BuddyList = {
   name: string;
   administrator: Administrator;
   members: Buddy[];
+};
+
+export type IntersectionList = {
+  name: string;
+  age: number;
+  contact: {
+    email: string;
+    extension: number;
+  };
 };

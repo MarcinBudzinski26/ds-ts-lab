@@ -1,4 +1,4 @@
-import { Friend, Colleague } from "./myTypes";
+import { Friend, Colleague, IntersectionList } from "./myTypes";
 import { friends, colleagues } from "./01-basics";
 
 // --- older ---
@@ -74,5 +74,14 @@ console.log("sortColleagues by name length, return all:", sortColleagues(colleag
 function findFriends(friends: Friend[], criterion: (f: Friend) => boolean): Friend[] {
   return friends.filter(criterion);
 }
+
 console.log("findFriends name starts with Pa:", findFriends(friends, f => f.name.startsWith("Pa")));
 console.log("findFriends age < 35:", findFriends(friends, f => f.age < 35));
+
+function makeIntersectionList( name: string, age: number, email: string, extension: number): IntersectionList {
+  return { name,age,contact: {email, extension} } as IntersectionList;
+}
+
+
+
+

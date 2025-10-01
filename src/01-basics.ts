@@ -43,8 +43,18 @@ const friend1 : Friend = {
     },
   };
 
+    const colleague4: Colleague = {
+    name: "Jane Costello",
+    department: "Architecture",
+    contact: {
+      email: "arch@company.com",
+      extension: 128,
+    },
+  };
+
+
   export const colleagues : ColleagueHistory = {
-    current: [colleague1, colleague2, colleague3],
+    current: [colleague1, colleague2, colleague3,colleague4],
     former: [],
   };
 

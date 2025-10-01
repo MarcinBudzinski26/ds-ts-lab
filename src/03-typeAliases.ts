@@ -4,6 +4,7 @@ import {
     Buddy,
     BuddyList,
     Administrator,
+    IntersectionList
   } from "./myTypes";
   import { friends } from "./01-basics";
 
@@ -34,7 +35,7 @@ import {
         extension: 125,
       }
     };
-  
+
     function makeBuddyList(name: string,buddies: Buddy[],admin?: Administrator
       ): BuddyList {
         return {name, members: buddies, administrator: admin} as BuddyList;
